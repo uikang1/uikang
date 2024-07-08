@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>의강이의 차트 외부에서 불러오기</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="chart.js"></script>
+
+        <style>
+            .chart {
+                width: 50%;
+                margin: 5% auto;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="chart">
+            <canvas id="chartCanvas"></canvas>
+        </div>
+
+        <script>
+            // BarChart();
+
+            // PieChart();
+
+            // DoughnutChart();
+
+            // PolarAreaChart();
+
+            // uikangChart('line', lineData, lineOptions);
+            uikangChart('radar', radarData1, radarOptions);
+        </script>
+    </body>
+</html>

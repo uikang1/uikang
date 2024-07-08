@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>의강이의 차트 외부에서 불러오기</title>
+        <title>의강이의 성장기</title>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -11,15 +11,17 @@
 
         <style>
             .chart {
-                width: 50%;
-                margin: 5% auto;
-                display: block;
+                width: 25%;
+                margin: 5px;
             }
         </style>
     </head>
     <body>
         <div class="chart">
             <canvas id="chartCanvas"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas1"></canvas>
         </div>
 
         <script>
@@ -32,7 +34,8 @@
             // PolarAreaChart();
 
             // uikangChart('line', lineData, lineOptions);
-            uikangChart('radar', radarData1, radarOptions);
+            uikangChart1('radar', radarData1, radarOptions1);
+            uikangChart('radar', radarData, radarOptions);
         </script>
     </body>
 </html>

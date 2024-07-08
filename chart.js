@@ -6,6 +6,14 @@ function uikangChart(type, data, options) {
         options: options,
     });
 }
+function uikangChart1(type, data, options) {
+    const cha1 = document.getElementById('chartCanvas1').getContext('2d');
+    new Chart(cha1, {
+        type: type,
+        data: data,
+        options: options,
+    });
+}
 
 const lineData = {
     labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월'],
@@ -97,6 +105,20 @@ const radarData1 = {
 };
 
 const radarOptions = {
+    elements: {
+        line: { tension: 0.1 },
+    },
+    scales: {
+        r: {
+            pointLabels: {
+                font: {
+                    size: 20,
+                },
+            },
+        },
+    },
+};
+const radarOptions1 = {
     elements: {
         line: { tension: 0.1 },
     },

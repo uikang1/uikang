@@ -1,14 +1,6 @@
-function uikangChart(type, data, options) {
-    const cha = document.getElementById('chartCanvas').getContext('2d');
+function uikangChart(type, data, options, canvasId) {
+    const cha = document.getElementById(canvasId).getContext('2d');
     new Chart(cha, {
-        type: type,
-        data: data,
-        options: options,
-    });
-}
-function uikangChart1(type, data, options) {
-    const cha1 = document.getElementById('chartCanvas1').getContext('2d');
-    new Chart(cha1, {
         type: type,
         data: data,
         options: options,
@@ -75,13 +67,12 @@ const radarData = {
         },
     ],
 };
-
 const radarData1 = {
-    labels: ['은정1', '중권1', '상호1', '의강1'],
+    labels: ['은정', '중권', '상호', '의강'],
     datasets: [
         {
             label: '현피 횟수',
-            data: [65, 60, 50, 100],
+            data: [65, 60, 70, 100],
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
@@ -105,20 +96,6 @@ const radarData1 = {
 };
 
 const radarOptions = {
-    elements: {
-        line: { tension: 0.1 },
-    },
-    scales: {
-        r: {
-            pointLabels: {
-                font: {
-                    size: 20,
-                },
-            },
-        },
-    },
-};
-const radarOptions1 = {
     elements: {
         line: { tension: 0.1 },
     },

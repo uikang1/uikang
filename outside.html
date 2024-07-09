@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>의강이의 성장기</title>
-
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <script src="chart.js"></script>
-
         <style>
             .chart {
                 width: 25%;
@@ -18,25 +15,38 @@
     </head>
     <body>
         <div class="chart">
-            <canvas id="chartCanvas"></canvas>
+            <canvas id="chartCanvas1"></canvas>
         </div>
         <div class="chart">
-            <canvas id="chartCanvas1"></canvas>
+            <canvas id="chartCanvas2"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas2-1"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas3"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas4"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas5"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas6"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chartCanvas7"></canvas>
         </div>
 
         <script>
-            // BarChart();
-
-            // PieChart();
-
-            // DoughnutChart();
-
-            // PolarAreaChart();
-
-            // uikangChart('line', lineData, lineOptions);
-
-            uikangChart('radar', radarData, radarOptions, 'chartCanvas');
-            uikangChart('radar', radarData1, radarOptions, 'chartCanvas1');
+            LineChart('chartCanvas1');
+            RadarChart(radarData, 'chartCanvas2');
+            RadarChart(radarData1, 'chartCanvas2-1');
+            BarChart('chartCanvas3');
+            PieChart('chartCanvas4');
+            DoughnutChart('chartCanvas5');
+            PolarAreaChart('chartCanvas6');
         </script>
     </body>
 </html>

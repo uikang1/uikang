@@ -1,11 +1,11 @@
-function uikangChart(type, data, options, canvasId) {
+const uikangChart = (type, data, options, canvasId) => {
     const cha = document.getElementById(canvasId).getContext('2d');
     new Chart(cha, {
-        type: type,
-        data: data,
-        options: options,
+        type,
+        data,
+        options,
     });
-}
+};
 
 const lineData = {
     labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월'],
@@ -111,15 +111,15 @@ const radarOptions = {
     },
 };
 
-function LineChart(canvasId) {
+const LineChart = (canvasId) => {
     uikangChart('line', lineData, lineOptions, canvasId);
-}
+};
 
-function RadarChart(data, canvasId) {
+const RadarChart = (data, canvasId) => {
     uikangChart('radar', data, radarOptions, canvasId);
-}
+};
 
-function BarChart(canvasId) {
+const BarChart = (canvasId) => {
     const barData = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
@@ -154,9 +154,9 @@ function BarChart(canvasId) {
     };
 
     uikangChart('bar', barData, barOptions, canvasId);
-}
+};
 
-function PieChart(canvasId) {
+const PieChart = (canvasId) => {
     const pieData = {
         labels: ['Red', 'Blue', 'Yellow'],
         datasets: [
@@ -180,9 +180,9 @@ function PieChart(canvasId) {
     };
 
     uikangChart('pie', pieData, pieOptions, canvasId);
-}
+};
 
-function DoughnutChart(canvasId) {
+const DoughnutChart = (canvasId) => {
     const doughnutData = {
         labels: ['Red', 'Blue', 'Yellow'],
         datasets: [
@@ -206,9 +206,9 @@ function DoughnutChart(canvasId) {
     };
 
     uikangChart('doughnut', doughnutData, doughnutOptions, canvasId);
-}
+};
 
-function PolarAreaChart(canvasId) {
+const PolarAreaChart = (canvasId) => {
     const polarAreaData = {
         labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
         datasets: [
@@ -241,4 +241,4 @@ function PolarAreaChart(canvasId) {
     };
 
     uikangChart('polarArea', polarAreaData, polarAreaOptions, canvasId);
-}
+};

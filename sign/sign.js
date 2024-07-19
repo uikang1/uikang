@@ -47,3 +47,16 @@ document.getElementById('phone').addEventListener('input', function (event) {
     }
     event.target.value = value;
 });
+
+
+/**
+ * 기능 수정사항
+ * 1. 필수 처리 : required로 처리 X, JS 함수로 만들어서 submit시 검사 처리
+ * 2. 글자 수 제한 : 정규 표현식이 아닌 input 이벤트로 입력할 때마다 검사 처리
+ * 3. 전화번호 제한 오류 : 형식으로 잘나오는데 글자 수 초과 ex) 010-1234-5678909121231...
+ * 
+ * 코드 수정
+ * 1. 변수 -> 함수 -> 이벤트 순으로 변경
+ * 2. ES6문법 적용
+ * 3. 코드 설명 주석 처리
+ */

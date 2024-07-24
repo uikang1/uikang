@@ -60,7 +60,7 @@ const validateForm = (event) => {
     // 개인정보 취급방침 동의 여부를 검사
     if (!policy.checked) {
         alert('개인정보 취급방침에 동의해야 회원가입이 가능합니다.');
-        policy.focus(); // 개인정보 취급방침 체크박스에 포커스를 맟추
+        policy(); // 개인정보 취급방침 체크박스에 포커스를 맟추
         return;
     }
 

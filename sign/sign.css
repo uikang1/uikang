@@ -1,12 +1,12 @@
 body {
     background-color: #f0f0f0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 1000px;
+    height: 100%;
     margin: 0;
     background-image: url(./bgi.png);
-    background-position: 0 0;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -16,7 +16,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 90%;
+    max-width: 300px;
+    margin: 20px 0;
 }
 
 h2 {
@@ -52,31 +54,52 @@ button {
 button:hover {
     background-color: yellowgreen;
 }
+
 .bimg {
-    margin-right: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
 }
+
 .bimg1 {
     border-radius: 50%;
-    width: 500px;
+    width: 100%;
     height: 500px;
-}
-footer img {
-    border-radius: 0;
-    position: absolute;
-    left: 60px;
-    bottom: -100px;
 }
 
 header img {
-    margin-right: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
 }
+
 .privacy {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
-.privacy input {
-    position: absolute;
-    right: -110px;
-    bottom: -6px;
+@media only screen and (max-width: 600px) {
+    body {
+        height: 100%;
+        background-position: center;
+    }
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+    .bimg1 {
+        width: 100%;
+        height: 500px;
+    }
+    footer img {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    .privacy input {
+        position: static;
+        margin-top: 10px;
+    }
 }

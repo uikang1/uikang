@@ -23,14 +23,16 @@ const passwordPattern = /^(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // 전화번호는 000-0000-0000 형식
 const phonePattern = /^\d{3}-\d{4}-\d{4}$/;
+// 아이디는 영문 소문자와 숫자만 허용되며, 20자 이내여야 함
+const usernamePattern = /^[a-z0-9]{1,20}$/;
 
 // 폼 유효성을 검사하는 함수
 const validateForm = (event) => {
     // 폼 제출 막기
     event.preventDefault();
 
-    // 아이디 유효성을 검사합니다. 아이디는 영문 소문자와 숫자만 허용되며, 20자 이내여야 함
-    if (username.value.length > 20 || /[^a-z0-9]/.test(username.value)) {
+    // 아이디 유효성을 검사
+    if (!usernamePattern.test(username.value)) {
         alert('아이디는 영문 소문자와 숫자만 허용되며, 20자 이내여야 합니다.');
         username.focus(); // 아이디 입력란에 포커스를 맞춘다
         return;
@@ -60,7 +62,7 @@ const validateForm = (event) => {
     // 개인정보 취급방침 동의 여부를 검사
     if (!policy.checked) {
         alert('개인정보 취급방침에 동의해야 회원가입이 가능합니다.');
-        policy(); // 개인정보 취급방침 체크박스에 포커스를 맟추
+        policy(); // 개인정보 취급방침 체크박스에 포커스를 맞춘다
         return;
     }
 
@@ -88,7 +90,7 @@ const formatPhoneNumber = (event) => {
 
 // 입력란의 최대 글자 수를 제한하는 함수
 const limitLength = (event, maxLength) => {
-    // 최대 길이를 초과하면 초과된 부분을 잘라냠
+    // 최대 길이를 초과하면 초과된 부분을 잘라냄
     if (event.target.value.length > maxLength) {
         event.target.value = event.target.value.slice(0, maxLength);
     }
@@ -118,15 +120,3 @@ phone.addEventListener('input', (event) => {
 
 // 폼 제출 시 유효성 검사를 실행
 signupForm.addEventListener('submit', validateForm);
-
-/*
- * 기능 수정사항
- * 1. 필수 처리 : required로 처리하지 않고 JS 함수로 폼 제출 시 검사 처리
- * 2. 글자 수 제한 : 정규 표현식이 아닌 input 이벤트로 입력할 때마다 검사 처리
- * 3. 전화번호 제한 오류 : 형식으로 잘나오는데 글자 수 초과 문제 해결
- *
- * 코드 수정
- * 1. 변수 -> 함수 -> 이벤트 순으로 정리
- * 2. ES6 문법 적용
- * 3. 코드 설명 주석 추가
- */
